@@ -2,11 +2,11 @@
 
       <div>
       <form (submit)="addCollectible()">
-      <input [(ngModel)]="newCollectible" (keyup.enter)="newCollectible=''" class="textfield" name="newCollectible">
-        <button  type="submit" [disabled]="newCollectible===''">Add Collectible
+        <input [(ngModel)]="newCollectible" (keyup.enter)="newCollectible=''" class="textfield" name="newCollectible">
+        <button  type="submit" [disabled]="newCollectible===''">Add Collectible</button>
       </form>
       </div>
-
+<!-- place to add new collectible -->
       <div [hidden]="newCollectible">
         Type in a new collectible...
       </div>
@@ -17,15 +17,15 @@
       </div>
 
       <ul>
-      <li *ngFor="let collectible of collectibles; let i=index">
+        <li *ngFor="let collectible of collectibles; let i=index">
         <input type="checkbox" class="checkbox" [(ngModel)]="collectible.catalogued" />
-      <span [ngClass]="{'checked': collectible.catalogued}">{{ collectible.newCollectible }}
-      <span (click)="deleteCollectible(i)" class="delete-icon">[X]
+          <span [ngClass]="{'checked': collectible.catalogued}">{{ collectible.newCollectible }}></span>
+          <span (click)="deleteCollectible(i)" class="delete-icon">[X]></span>
         </li>
-        </ul>
+      </ul>
 
-        <div class="mtop20">
-      <button (click)="deleteSelectedCollectibles()">Delete Selected
+      <div class="mtop20">
+        <button (click)="deleteSelectedCollectibles()">Delete Selected</button>
       </div>
 
   </div>
