@@ -1,0 +1,31 @@
+<div class="collectibles">
+
+      <div>
+      <form (submit)="addCollectible()">
+      <input [(ngModel)]="newCollectible" (keyup.enter)="newCollectible=''" class="textfield" name="newCollectible">
+        <button  type="submit" [disabled]="newCollectible===''">Add Collectible
+      </form>
+      </div>
+
+      <div [hidden]="newCollectible">
+        Type in a new collectible...
+      </div>
+
+      <div [hidden]="!newCollectible">
+        <!-- Another two-way binding example -->
+        Typing: {{ newCollectible }}
+      </div>
+
+      <ul>
+      <li *ngFor="let collectible of collectibles; let i=index">
+        <input type="checkbox" class="checkbox" [(ngModel)]="collectible.catalogued" />
+      <span [ngClass]="{'checked': collectible.catalogued}">{{ collectible.newCollectible }}
+      <span (click)="deleteCollectible(i)" class="delete-icon">[X]
+        </li>
+        </ul>
+
+        <div class="mtop20">
+      <button (click)="deleteSelectedCollectibles()">Delete Selected
+      </div>
+
+  </div>
