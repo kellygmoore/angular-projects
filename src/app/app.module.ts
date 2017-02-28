@@ -6,7 +6,7 @@ import { HttpModule }	 from '@angular/http';
 import { CollectiblesComponent }  from './collectible';
 
 @NgModule({
-imports: [ BrowserModule,
+  imports: [ BrowserModule,
 		   FormsModule,
 		   HttpModule 
 		 ],

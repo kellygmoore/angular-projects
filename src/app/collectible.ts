@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
 	selector: 'collectibles-app',
-	templateUrl: 'app/template.html'
-	//styleUrls: ['app/collectibles.css']
+	templateUrl: 'app/template.html',
+	styleUrls: ['app/collectible.css']
 })
 export class CollectiblesComponent {
 	newCollectible: string;

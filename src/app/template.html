@@ -1,4 +1,4 @@
-<div class="collectibles">
+<div class="collectible">
 
       <div>
       <form (submit)="addCollectible()">
@@ -18,9 +18,9 @@
 
       <ul>
         <li *ngFor="let collectible of collectibles; let i=index">
-        <input type="checkbox" class="checkbox" [(ngModel)]="collectible.catalogued" />
-          <span [ngClass]="{'checked': collectible.catalogued}">{{ collectible.newCollectible }}></span>
-          <span (click)="deleteCollectible(i)" class="delete-icon">[X]></span>
+        <input type="checkbox" class="checkbox" [(ngModel)]="collectible.catalogued"/>
+          <span [ngClass]="{'checked': collectible.catalogued}">{{ collectible.newCollectible }}</span>
+          <span (click)="deleteCollectible(i)" class="delete-icon">[X]</span>
         </li>
       </ul>
 
