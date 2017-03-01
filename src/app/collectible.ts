@@ -6,12 +6,12 @@ import { Component } from '@angular/core';
 	styleUrls: ['app/collectible.css']
 })
 export class CollectiblesComponent {
-	newCollectible: string;
+	newCollectible: any;
 	collectibles: any;
 	collectibleObj: any;
 
 	constructor() {
-		this.newCollectible = '';
+		this.newCollectible = {};
 		this.collectibles = [];
 	}
 
@@ -20,8 +20,10 @@ export class CollectiblesComponent {
 			newCollectible: this.newCollectible,
 			catalogued: false
 		}
+		console.log("Collectible just added: ", this.newCollectible);
 		this.collectibles.push(this.collectibleObj);
-		this.newCollectible = '';
+		console.log("List array: ", this.collectibles);
+		this.newCollectible = {};
 		event.preventDefault();
 	}
 

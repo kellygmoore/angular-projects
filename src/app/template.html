@@ -2,24 +2,32 @@
 
       <div>
       <form (submit)="addCollectible()">
-        <input [(ngModel)]="newCollectible" (keyup.enter)="newCollectible=''" class="textfield" name="newCollectible">
+        <input [(ngModel)]="newCollectible.name" (keyup.enter)="newCollectible.name=''" class="textfield" name="newCollectible.name">
+        <input [(ngModel)]="newCollectible.description" (keyup.enter)="newCollectible.description=''" class="textfield" name="newCollectible.description">
         <button  type="submit" [disabled]="newCollectible===''">Add Collectible</button>
       </form>
       </div>
 <!-- place to add new collectible -->
-      <div [hidden]="newCollectible">
-        Type in a new collectible...
+      <div [hidden]="newCollectible.name">
+        Type in a new collectible name:
+      </div>
+      <div [hidden]="newCollectible.description">
+        Type in a new collectible description:
       </div>
 
-      <div [hidden]="!newCollectible">
+      <div [hidden]="!newCollectible.name">
         <!-- Another two-way binding example -->
-        Typing: {{ newCollectible }}
+        Typing: {{ newCollectible.name }}
+      </div>
+      <div [hidden]="!newCollectible.description">
+        <!-- Another two-way binding example -->
+        Typing: {{ newCollectible.description }}
       </div>
 
       <ul>
         <li *ngFor="let collectible of collectibles; let i=index">
-        <input type="checkbox" class="checkbox" [(ngModel)]="collectible.catalogued"/>
-          <span [ngClass]="{'checked': collectible.catalogued}">{{ collectible.newCollectible }}</span>
+          <input type="checkbox" class="checkbox" [(ngModel)]="collectible.catalogued"/>
+          <span [ngClass]="{'checked': collectible.catalogued}">{{ collectible.newCollectible.name }}</span>
           <span (click)="deleteCollectible(i)" class="delete-icon">[X]</span>
         </li>
       </ul>
