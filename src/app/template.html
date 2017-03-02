@@ -2,13 +2,15 @@
 
       <div>
       <form (submit)="addCollectible()">
-        <input [(ngModel)]="newCollectible.name" (keyup.enter)="newCollectible.name=''" class="textfield" name="newCollectible.name">
-        <input [(ngModel)]="newCollectible.description" (keyup.enter)="newCollectible.description=''" class="textfield" name="newCollectible.description">
+        <input [(ngModel)]="newCollectible.name" (keyup.enter)="newCollectible.name=''" class="textfield" name="newCollectible.name" placeholder="What is the name of your collectible item?">
+        <input [(ngModel)]="newCollectible.description" (keyup.enter)="newCollectible.description=''" class="textfield" name="newCollectible.description" placeholder="Add a description...">
+        <input [(ngModel)]="newCollectible.owner" (keyup.enter)="newCollectible.owner=''" class="textfield" name="newCollectible.owner" placeholder="Where is this item located?">
+        <input [(ngModel)]="newCollectible.located" (keyup.enter)="newCollectible.located=''" class="textfield" name="newCollectible.located" placeholder="Who owns this collectible?">
         <button  type="submit" [disabled]="newCollectible===''">Add Collectible</button>
       </form>
-      </div>
+    </div>
 <!-- place to add new collectible -->
-      <div [hidden]="newCollectible.name">
+      <!-- <div [hidden]="newCollectible.name">
         Type in a new collectible name:
       </div>
       <div [hidden]="newCollectible.description">
@@ -16,14 +18,15 @@
       </div>
 
       <div [hidden]="!newCollectible.name">
-        <!-- Another two-way binding example -->
+        Another two-way binding example
         Typing: {{ newCollectible.name }}
       </div>
-      <div [hidden]="!newCollectible.description">
+      <div [hidden]="!newCollectible.description"> -->
         <!-- Another two-way binding example -->
-        Typing: {{ newCollectible.description }}
-      </div>
+        <!-- Typing: {{ newCollectible.description }}
+      </div> -->
 
+    <div>
       <ul>
         <li *ngFor="let collectible of collectibles; let i=index">
           <input type="checkbox" class="checkbox" [(ngModel)]="collectible.catalogued"/>
@@ -31,9 +34,10 @@
           <span (click)="deleteCollectible(i)" class="delete-icon">[X]</span>
         </li>
       </ul>
+    </div>
 
-      <div class="mtop20">
-        <button (click)="deleteSelectedCollectibles()">Delete Selected</button>
-      </div>
+    <div class="mtop20">
+      <button (click)="deleteSelectedCollectibles()">Delete Selected</button>
+    </div>
 
   </div>
