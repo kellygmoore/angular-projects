@@ -9,6 +9,8 @@ export class CollectiblesComponent {
 	newCollectible: any;
 	collectibles: any;
 	collectibleObj: any;
+	selectedCollectible: any;
+	showThisOne: boolean;
 
 	constructor() {
 		this.newCollectible = {};
@@ -26,6 +28,11 @@ export class CollectiblesComponent {
 		this.newCollectible = {};
 		event.preventDefault();
 	}
+
+	onSelect(collectible: any): void {
+    	this.selectedCollectible = collectible;
+    	this.showThisOne = !this.showThisOne;
+  	}
 
 	deleteCollectible(index: any) {
 		this.collectibles.splice(index, 1);

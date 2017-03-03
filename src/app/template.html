@@ -30,7 +30,8 @@
       <ul>
         <li *ngFor="let collectible of collectibles; let i=index">
           <input type="checkbox" class="checkbox" [(ngModel)]="collectible.catalogued"/>
-          <span [ngClass]="{'checked': collectible.catalogued}">{{ collectible.newCollectible.name }}</span>
+          <span [ngClass]="{'checked': collectible.catalogued}"><a href="#" (click)="onSelect(collectible)">{{ collectible.newCollectible.name }}</a></span>
+          <span *ngIf="!showThisOne">{{ selectedCollectible.description }}</span>
           <span (click)="deleteCollectible(i)" class="delete-icon">[X]</span>
         </li>
       </ul>
