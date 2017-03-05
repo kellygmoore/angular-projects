@@ -30,8 +30,10 @@ export class CollectiblesComponent {
 	}
 
 	onSelect(collectible: any): void {
+		// console.log("onSelect collectible: ", collectible);
     	this.selectedCollectible = collectible;
-    	this.showThisOne = !this.showThisOne;
+    	console.log("onSelect this.selectedColl: ", this.selectedCollectible);
+    	// this.showThisOne = !this.showThisOne;
   	}
 
 	deleteCollectible(index: any) {
