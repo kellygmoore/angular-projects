@@ -1,13 +1,13 @@
 <div class="collectible">
 
       <div>
-      <form (submit)="addCollectible()">
-        <input [(ngModel)]="newCollectible.name" (keyup.enter)="newCollectible.name=''" class="textfield" name="newCollectible.name" placeholder="What is the name of your collectible item?">
-        <input [(ngModel)]="newCollectible.description" (keyup.enter)="newCollectible.description=''" class="textfield" name="newCollectible.description" placeholder="Add a description...">
-        <input [(ngModel)]="newCollectible.owner" (keyup.enter)="newCollectible.owner=''" class="textfield" name="newCollectible.owner" placeholder="Who owns this collectible?">
-        <input [(ngModel)]="newCollectible.located" (keyup.enter)="newCollectible.located=''" class="textfield" name="newCollectible.located" placeholder="Where is this collectible located?">
-        <button  type="submit" [disabled]="newCollectible===''">Add Collectible</button>
-      </form>
+        <form (submit)="addCollectible()">
+          <input [(ngModel)]="newCollectible.name" (keyup.enter)="newCollectible.name=''" class="textfield" name="newCollectible.name" placeholder="What is the name of your collectible item?">
+          <input [(ngModel)]="newCollectible.description" (keyup.enter)="newCollectible.description=''" class="textfield" name="newCollectible.description" placeholder="Add a description...">
+          <input [(ngModel)]="newCollectible.owner" (keyup.enter)="newCollectible.owner=''" class="textfield" name="newCollectible.owner" placeholder="Who owns this collectible?">
+          <input [(ngModel)]="newCollectible.located" (keyup.enter)="newCollectible.located=''" class="textfield" name="newCollectible.located" placeholder="Where is this collectible located?">
+          <button  type="submit" [disabled]="newCollectible===''">Add Collectible</button>
+        </form>
     </div>
 <!-- place to add new collectible -->
       <!-- <div [hidden]="newCollectible.name">
@@ -26,17 +26,17 @@
         <!-- Typing: {{ newCollectible.description }}
       </div> -->
 
-    <div>
+    <div class="list">
       <ul>
         <li *ngFor="let collectible of collectibles; let i=index">
           <input type="checkbox" class="checkbox" [(ngModel)]="collectible.catalogued"/>
-          <span [ngClass]="{'checked': collectible.catalogued}"><a href="#" (click)="onSelect(collectible)">{{ collectible.newCollectible.name }}</a></span>
+          <span [ngClass]="{'checked': collectible.catalogued}" (click)="onSelect(collectible)">{{ collectible.newCollectible.name }}</span>
           
           <span (click)="deleteCollectible(i)" class="delete-icon">[X]</span>
         </li>
       </ul>
-      <div *ngIf="selectedCollectible">
-        <p>Description: {{ selectedCollectible.newCollectible.name }}</p>
+      <div *ngIf="selectedCollectible" [hidden]="!showDetail">
+        <p>Name: {{ selectedCollectible.newCollectible.name }}</p>
         <p>Description: {{ selectedCollectible.newCollectible.description }}</p>
         <p>Owner: {{ selectedCollectible.newCollectible.owner }}</p>
         <p>Location: {{ selectedCollectible.newCollectible.located }}</p>

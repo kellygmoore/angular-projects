@@ -33,6 +33,10 @@
     text-decoration: line-through;
   }
 
+  .collectible .list ul {
+    list-style: none;
+  }
+
   .collectible button {
     height: 36px;
     font-size: 1.1em;

@@ -9,8 +9,8 @@ export class CollectiblesComponent {
 	newCollectible: any;
 	collectibles: any;
 	collectibleObj: any;
-	selectedCollectible: any;
-	showThisOne: boolean;
+	selectedCollectible: any = '';
+	showDetail: boolean = false;
 
 	constructor() {
 		this.newCollectible = {};
@@ -30,17 +30,22 @@ export class CollectiblesComponent {
 	}
 
 	onSelect(collectible: any): void {
-		// console.log("onSelect collectible: ", collectible);
-    	this.selectedCollectible = collectible;
-    	console.log("onSelect this.selectedColl: ", this.selectedCollectible);
-    	// this.showThisOne = !this.showThisOne;
+
+		if(this.selectedCollectible === collectible) {
+			this.showDetail = !this.showDetail;
+		} else {
+			this.selectedCollectible = collectible;
+			this.showDetail = true;
+		}
   	}
 
 	deleteCollectible(index: any) {
+		this.showDetail = false;
 		this.collectibles.splice(index, 1);
 	}
 
 	deleteSelectedCollectibles() {
+		this.showDetail = false;
 		for(var i=(this.collectibles.length -1); i > -1; i--) {
 			if(this.collectibles[i].catalogued) {
 				this.collectibles.splice(i,1);
