@@ -1,14 +1,14 @@
 <div class="collectible">
 
-      <div>
+      <div class="formInputArea">
         <form>
           <!-- <input [(ngModel)]="newCollectible.name" (keyup.enter)="newCollectible.name=''" class="textfield" name="newCollectible.name" placeholder="What is the name of your collectible item?"> -->
           <input #collectibleName placeholder="Name of your collectible..." class="textfield" />
-          <input #collectibleDescription placeholder="Add a description..." class="textfield" />
+          <textarea #collectibleDescription placeholder="Add a description..."></textarea>
           <input #collectibleOwner placeholder="Owner of collectible..." class="textfield" />
           <input #collectibleLocated placeholder="Where is this item located..." class="textfield" />
 
-          <button (click)="add(collectibleName.value, collectibleDescription.value, collectibleOwner.value, collectibleLocated.value); collectibleName.value=''; collectibleDescription.value=''; collectibleOwner.value=''; collectibleLocated.value=''">Add Collectible</button>
+          <button class="formInputButton" (click)="add(collectibleName.value, collectibleDescription.value, collectibleOwner.value, collectibleLocated.value); collectibleName.value=''; collectibleDescription.value=''; collectibleOwner.value=''; collectibleLocated.value=''">Add Collectible</button>
         </form>
     </div>
 

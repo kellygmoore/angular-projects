@@ -1,55 +1,46 @@
-  /*.box1 {
-    border: solid 1px #006699;
-    padding: 20px;
-    background: #f3f3f3;
-    border-radius: 5px;
-  }*/
+.formInputArea {
+  margin: .5rem 0 .5rem 3rem;
+  background-color: gray;
+  width: 409px;
+}
 
-  .collectible {
-    width: 800px;
-  }
-
-  .collectible form {
+  form {
+    border: 2px solid white;
     display: flex;
     flex-direction: column;
+    padding: 1rem;
+    border-radius: 5px;
+    width: 375px;
+    height: 350px;
     align-items: flex-start;
-    justify-content: center;
-  }
-
-  .collectible input.textfield {
-    width: 400px;
-    height: 24px;
-    /*margin-right: 20px;*/
-    font-size: 1rem;
-    margin: .75rem;
-  }
-
-  .collectible input.checkbox {
-    width: 20px;
-    height: 20px;
-  }
-
-  .collectible .checked {
-    text-decoration: line-through;
-  }
-
-  .collectible .list ul {
-    list-style: none;
-  }
-
-  .collectible button {
-    height: 36px;
-    font-size: 1.1em;
-    /*vertical-align: top;*/
-    border: solid 1px #999;
-    border-radius: 2px;
-    align-items: center;
     justify-content: flex-start;
-    margin: .75rem;
   }
 
-  .collectible .delete-icon {
-    diplay: inline-block;
-    cursor: pointer;
+  textarea, input {
+    margin: .5rem;
+    border: 2px solid #82a9c5;
+    font-size: 1rem;
+    padding: .2rem .75rem;
+    border-radius: 4px;
+    width: 85%;
   }
-  
+
+  textarea {
+    height: 4rem;
+    padding-top: 1rem;
+  }
+
+  input {
+    height: 2rem;
+  }
+
+  .formInputButton {
+    width: 92%;
+    border: 2px solid white;
+    background-color: #82a9c5;
+    margin: .5rem;
+    font-size: 1rem;
+  }
+
+
+

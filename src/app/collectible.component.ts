@@ -7,7 +7,8 @@ import { CollectibleService } from './collectible.service';
 @Component({
 	moduleId: module.id,
 	selector: 'collectibles-app',
-	templateUrl: './collectible.component.html'
+	templateUrl: './collectible.component.html',
+	styleUrls: ['./collectible.css']
 })
 export class CollectiblesComponent implements OnInit {
 	collectibles: Collectible[];
