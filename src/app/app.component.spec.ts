@@ -1,4 +1,4 @@
-import { CollectiblesComponent } from './collectible';
+import { CollectiblesComponent } from './collectible.component';
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By }           from '@angular/platform-browser';

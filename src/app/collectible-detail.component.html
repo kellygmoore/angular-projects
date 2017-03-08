@@ -1,0 +1,24 @@
+<div *ngIf="collectible">
+  <h2>{{collectible.name}} details:</h2>
+  <div>
+    <label>id: </label>{{collectible.id}}
+  </div>
+  <div>
+	<label>name: </label>
+	<input [(ngModel)]="collectible.name" placeholder="name" />
+  </div>
+  <div>
+	<label>description: </label>
+	<input [(ngModel)]="collectible.description" placeholder="description" />
+  </div>
+  <div>
+	<label>owner: </label>
+	<input [(ngModel)]="collectible.owner" placeholder="owner" />
+  </div>
+  <div>
+	<label>location: </label>
+	<input [(ngModel)]="collectible.located" placeholder="located" />
+  </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>

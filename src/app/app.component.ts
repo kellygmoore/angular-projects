@@ -1,7 +1,14 @@
-// import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 
-// @Component({
-//   selector: 'my-app',
-//   template: `<h1>Hello {{name}}</h1>`,
-// })
-// export class AppComponent  { name = 'Angular'; }
+@Component({
+  moduleId: module.id,
+  selector: 'my-app',
+  template: `<h1>{{ title }}</h1>
+  			<nav>
+  				<a routerLink="/collectible-detail" routerLinkActive="active">Collectible Detail</a>
+      		<a routerLink="/collectible" routerLinkActive="active">Collectibles</a>
+  			</nav>
+  			<router-outlet></router-outlet>
+  `
+})
+export class AppComponent  { title = "Kelly's Collectibles"; }
