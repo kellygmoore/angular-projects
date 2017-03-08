@@ -10,18 +10,19 @@ import { CollectibleService } from './collectible.service';
 	templateUrl: './collectible.component.html'
 })
 export class CollectiblesComponent implements OnInit {
-	newCollectible: any;
-	collectibles: any;
-	collectibleObj: any;
-	selectedCollectible: any = '';
+	collectibles: Collectible[];
+	selectedCollectible: Collectible;
+	//newCollectible: any;
+	//collectibles: any;
+	//collectibleObj: any;
+	//selectedCollectible: any = '';
 	showDetail: boolean = false;
 
 	constructor(
 		private collectibleService: CollectibleService,
 		private router: Router) {
-
-			this.newCollectible = {};
-			this.collectibles = [];
+			//this.newCollectible = {};
+			//this.collectibles = [];
 		}
 
 	getCollectibles(): void {
@@ -30,17 +31,38 @@ export class CollectiblesComponent implements OnInit {
 			.then(collectibles => this.collectibles = collectibles);
 	}
 
-	addCollectible() {
-		this.collectibleObj = {
-			newCollectible: this.newCollectible,
-			catalogued: false
+	add(name: string, description: string, owner: string, located: string): void {
+		name = name.trim();
+		if(!name) {
+			return;
 		}
-		console.log("Collectible just added: ", this.newCollectible);
-		this.collectibles.push(this.collectibleObj);
-		console.log("List array: ", this.collectibles);
-		this.newCollectible = {};
-		event.preventDefault();
+		this.collectibleService.create(name, description, owner, located)
+			.then(collectible => {
+				this.collectibles.push(collectible);
+				this.selectedCollectible = null;
+			});
 	}
+
+	// delete(collectible: Collectible): void {
+ //    this.collectibleService
+ //        .delete(collectible.id)
+ //        .then(() => {
+ //          this.collectibles = this.collectibles.filter(h => h !== collectible);
+ //          if (this.selectedCollectible === collectible) { this.selectedCollectible = null; }
+ //        });
+ //  	}
+
+	// addCollectible() {
+	// 	this.collectibleObj = {
+	// 		newCollectible: this.newCollectible,
+	// 		catalogued: false
+	// 	}
+	// 	console.log("Collectible just added: ", this.newCollectible);
+	// 	this.collectibles.push(this.collectibleObj);
+	// 	console.log("List array: ", this.collectibles);
+	// 	this.newCollectible = {};
+	// 	event.preventDefault();
+	// }
 
 	onSelect(collectible: any): void {
 
@@ -52,19 +74,19 @@ export class CollectiblesComponent implements OnInit {
 		}
   	}
 
-	deleteCollectible(index: any) {
-		this.showDetail = false;
-		this.collectibles.splice(index, 1);
-	}
+	// deleteCollectible(index: any) {
+	// 	this.showDetail = false;
+	// 	this.collectibles.splice(index, 1);
+	// }
 
-	deleteSelectedCollectibles() {
-		this.showDetail = false;
-		for(var i=(this.collectibles.length -1); i > -1; i--) {
-			if(this.collectibles[i].catalogued) {
-				this.collectibles.splice(i,1);
-			}
-		}
-	}
+	// deleteSelectedCollectibles() {
+	// 	this.showDetail = false;
+	// 	for(var i=(this.collectibles.length -1); i > -1; i--) {
+	// 		if(this.collectibles[i].catalogued) {
+	// 			this.collectibles.splice(i,1);
+	// 		}
+	// 	}
+	// }
 	ngOnInit(): void {
     	this.getCollectibles();
   	}

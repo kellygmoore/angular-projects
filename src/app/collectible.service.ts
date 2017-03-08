@@ -9,12 +9,11 @@ import { Collectible } from './collectible';
 export class CollectibleService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
-  private collectiblesUrl = 'api/collectible';  // URL to web api
+  private collectiblesUrl = 'api/collectibles';  // URL to web api
 
   constructor(private http: Http) { }
 
   getCollectibles(): Promise<Collectible[]> {
-    console.log("In getCollectibles function.");
     return this.http.get(this.collectiblesUrl)
                .toPromise()
                .then(response => response.json().data as Collectible[])
@@ -30,6 +29,7 @@ export class CollectibleService {
   }
 
   delete(id: number): Promise<void> {
+    console.log("In delete service.");
     const url = `${this.collectiblesUrl}/${id}`;
     return this.http.delete(url, {headers: this.headers})
       .toPromise()
@@ -37,9 +37,9 @@ export class CollectibleService {
       .catch(this.handleError);
   }
 
-  create(name: string): Promise<Collectible> {
+  create(name: string, description: string, owner: string, located: string): Promise<Collectible> {
     return this.http
-      .post(this.collectiblesUrl, JSON.stringify({name: name}), {headers: this.headers})
+      .post(this.collectiblesUrl, JSON.stringify({name: name, description: description, owner: owner, located: located}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data)
       .catch(this.handleError);
