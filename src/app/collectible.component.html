@@ -7,40 +7,19 @@
           <input #collectibleDescription placeholder="Add a description..." class="textfield" />
           <input #collectibleOwner placeholder="Owner of collectible..." class="textfield" />
           <input #collectibleLocated placeholder="Where is this item located..." class="textfield" />
-          <!-- <input [(ngModel)]="newCollectible.description" (keyup.enter)="newCollectible.description=''" class="textfield" name="newCollectible.description" placeholder="Add a description...">
-          <input [(ngModel)]="newCollectible.owner" (keyup.enter)="newCollectible.owner=''" class="textfield" name="newCollectible.owner" placeholder="Who owns this collectible?">
-          <input [(ngModel)]="newCollectible.located" (keyup.enter)="newCollectible.located=''" class="textfield" name="newCollectible.located" placeholder="Where is this collectible located?"> -->
+
           <button (click)="add(collectibleName.value, collectibleDescription.value, collectibleOwner.value, collectibleLocated.value); collectibleName.value=''; collectibleDescription.value=''; collectibleOwner.value=''; collectibleLocated.value=''">Add Collectible</button>
         </form>
     </div>
-<!-- place to add new collectible -->
-      <!-- <div [hidden]="newCollectible.name">
-        Type in a new collectible name:
-      </div>
-      <div [hidden]="newCollectible.description">
-        Type in a new collectible description:
-      </div>
-
-       -->
 
     <div class="list">
       <ul>
         <li *ngFor="let collectible of collectibles; let i=index">
-          <span (click)="onSelect(collectible)">{{ collectible.name }}</span>
-          
-          <!-- <span (click)="deleteCollectible(i)" class="delete-icon">[X]</span> -->
+          <!-- <span (click)="onSelect(collectible)">{{ collectible.name }}</span> -->
+          <span [routerLink]="['/detail', collectible.id]">{{ collectible.name }}</span>
+          <button class="delete" (click)="delete(collectible); $event.stopPropagation()">x</button>
         </li>
       </ul>
-      <div *ngIf="selectedCollectible" [hidden]="!showDetail">
-        <p>Name: {{ selectedCollectible.name }}</p>
-        <p>Description: {{ selectedCollectible.description }}</p>
-        <p>Owner: {{ selectedCollectible.owner }}</p>
-        <p>Location: {{ selectedCollectible.located }}</p>
-      </div>
     </div>
-
-    <!-- <div class="mtop20">
-      <button (click)="deleteSelectedCollectibles()">Delete Selected</button>
-    </div> -->
 
   </div>

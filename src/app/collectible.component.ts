@@ -43,14 +43,14 @@ export class CollectiblesComponent implements OnInit {
 			});
 	}
 
-	// delete(collectible: Collectible): void {
- //    this.collectibleService
- //        .delete(collectible.id)
- //        .then(() => {
- //          this.collectibles = this.collectibles.filter(h => h !== collectible);
- //          if (this.selectedCollectible === collectible) { this.selectedCollectible = null; }
- //        });
- //  	}
+	delete(collectible: Collectible): void {
+    this.collectibleService
+        .delete(collectible.id)
+        .then(() => {
+          this.collectibles = this.collectibles.filter(h => h !== collectible);
+          if (this.selectedCollectible === collectible) { this.selectedCollectible = null; }
+        });
+  	}
 
 	// addCollectible() {
 	// 	this.collectibleObj = {
