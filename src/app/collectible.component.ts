@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Collectible } from './collectible';
+import { People } from './people';
 import { CollectibleService } from './collectible.service';
 
 @Component({
@@ -13,6 +14,16 @@ import { CollectibleService } from './collectible.service';
 export class CollectiblesComponent implements OnInit {
 	collectibles: Collectible[];
 	selectedCollectible: Collectible;
+	selectedPerson: People;
+	people = [
+      {id: 1, fullname: 'Kelly Moore'},
+      {id: 2, fullname: 'Eric Moore'},
+      {id: 3, fullname: 'Marion Moore'},
+      {id: 4, fullname: 'Louis Moore'},
+      {id: 5, fullname: 'Winnie Moore'},
+      {id: 6, fullname: 'Sage Moore'},
+      {id: 7, fullname: 'Teddy Moore'},
+    ]
 	//newCollectible: any;
 	//collectibles: any;
 	//collectibleObj: any;
@@ -32,12 +43,12 @@ export class CollectiblesComponent implements OnInit {
 			.then(collectibles => this.collectibles = collectibles);
 	}
 
-	add(name: string, description: string, owner: string, located: string): void {
+	add(name: string, description: string, owner: string, located: string, willedTo: string): void {
 		name = name.trim();
 		if(!name) {
 			return;
 		}
-		this.collectibleService.create(name, description, owner, located)
+		this.collectibleService.create(name, description, owner, located, willedTo)
 			.then(collectible => {
 				this.collectibles.push(collectible);
 				this.selectedCollectible = null;
@@ -90,6 +101,12 @@ export class CollectiblesComponent implements OnInit {
 	// }
 	ngOnInit(): void {
     	this.getCollectibles();
+    	this.selectedPerson = this.people[0];
+  	}
+
+  	onInput($event: any) {
+  		$event.preventDefault();
+  		console.log('Selected: ', $event.target.value);
   	}
 
   	gotoDetail(): void {

@@ -13,7 +13,9 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 19, name: 'Coins', description: 'from collection', owner: 'Gary', located: 'Bedroom'},
       {id: 20, name: 'Pearl Necklace', description: 'passed from generations', owner: 'Claire', located: 'Jewelry box'}
     ];
+    
     return {collectibles};
   }
+
 }
 

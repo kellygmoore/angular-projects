@@ -37,9 +37,9 @@ export class CollectibleService {
       .catch(this.handleError);
   }
 
-  create(name: string, description: string, owner: string, located: string): Promise<Collectible> {
+  create(name: string, description: string, owner: string, located: string, willedTo: string): Promise<Collectible> {
     return this.http
-      .post(this.collectiblesUrl, JSON.stringify({name: name, description: description, owner: owner, located: located}), {headers: this.headers})
+      .post(this.collectiblesUrl, JSON.stringify({name: name, description: description, owner: owner, located: located, willedTo: willedTo}), {headers: this.headers})
       .toPromise()
       .then(res => res.json().data)
       .catch(this.handleError);

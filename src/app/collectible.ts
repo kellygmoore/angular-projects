@@ -4,4 +4,5 @@ export class Collectible {
   description: string;
   owner: string;
   located: string;
+  willedTo: string;
 }
