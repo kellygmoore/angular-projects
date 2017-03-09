@@ -1,8 +1,18 @@
-.formInputArea {
-  margin: .5rem 0 .5rem 3rem;
-  background-color: gray;
-  width: 409px;
+.collectible {
+  display: inline-flex;
 }
+
+  .formInputArea {
+    margin: .5rem 0 .5rem 3rem;
+    background-color: gray;
+    width: 409px;
+    height: 385px;
+    border-radius: 5px;
+  }
+
+  .list {
+    margin-left: 2rem;
+  }
 
   form {
     border: 2px solid white;
@@ -40,6 +50,28 @@
     background-color: #82a9c5;
     margin: .5rem;
     font-size: 1rem;
+  }
+
+  .delete:hover {
+    /*background-color: lightyellow;*/
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    border-radius: 4px;
+    padding: .5rem;
+    margin: .25rem;
+    font-family: 'Verdana';
+    font-size: 1rem;
+    background-color: #c0e6ff;
+    border: 1px solid gray;
+  }
+
+  li:hover {
+    background-color: lightgray;
   }
 
 
