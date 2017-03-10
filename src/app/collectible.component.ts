@@ -14,7 +14,7 @@ import { CollectibleService } from './collectible.service';
 export class CollectiblesComponent implements OnInit {
 	collectibles: Collectible[];
 	selectedCollectible: Collectible;
-	selectedPerson: People;
+	
 	people = [
       {id: 1, fullname: 'Kelly Moore'},
       {id: 2, fullname: 'Eric Moore'},
@@ -23,7 +23,12 @@ export class CollectiblesComponent implements OnInit {
       {id: 5, fullname: 'Winnie Moore'},
       {id: 6, fullname: 'Sage Moore'},
       {id: 7, fullname: 'Teddy Moore'},
-    ]
+    ];
+    selectedPerson: People = this.people[0];
+
+    onChangeObj(newObj: any) {
+    	console.log("new value: ", newObj);
+    }
 	//newCollectible: any;
 	//collectibles: any;
 	//collectibleObj: any;

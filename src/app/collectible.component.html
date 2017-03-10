@@ -7,8 +7,8 @@
           <textarea #collectibleDescription placeholder="Add a description..."></textarea>
           <input #collectibleOwner placeholder="Owner of collectible..." class="textfield" />
           <input #collectibleLocated placeholder="Where is this item located..." class="textfield" />
-          <select [(ngModel)]="selectedPerson.id" name="fullname" (input)="onInput($event)">
-            <option *ngFor="let person of people" value={{person.id}}>{{ person.fullname }}</option>
+          <select [(ngModel)]="selectedPerson.id" name="willedTo" (ngModelChange)="onChangeObj($event)">
+            <option [ngValue]="person" *ngFor="let person of people">{{ person.fullname }}</option>
           </select>
 
           <button class="formInputButton" (click)="add(collectibleName.value, collectibleDescription.value, collectibleOwner.value, collectibleLocated.value); collectibleName.value=''; collectibleDescription.value=''; collectibleOwner.value=''; collectibleLocated.value=''">Add Collectible</button>
