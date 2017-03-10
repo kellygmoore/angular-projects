@@ -7,7 +7,8 @@
           <textarea #collectibleDescription placeholder="Add a description..."></textarea>
           <input #collectibleOwner placeholder="Owner of collectible..." class="textfield" />
           <input #collectibleLocated placeholder="Where is this item located..." class="textfield" />
-          <select [(ngModel)]="selectedPerson.id" name="willedTo" (ngModelChange)="onChangeObj($event)">
+          <select [(ngModel)]="selectedPerson" name="willedTo" (ngModelChange)="onChangeObj($event)">
+            <!-- <option value="" disabled selected>--please select--</option> -->
             <option [ngValue]="person" *ngFor="let person of people">{{ person.fullname }}</option>
           </select>
 

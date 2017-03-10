@@ -16,6 +16,7 @@ export class CollectiblesComponent implements OnInit {
 	selectedCollectible: Collectible;
 	
 	people = [
+	  {id: -1, fullname: '--select person--'},
       {id: 1, fullname: 'Kelly Moore'},
       {id: 2, fullname: 'Eric Moore'},
       {id: 3, fullname: 'Marion Moore'},

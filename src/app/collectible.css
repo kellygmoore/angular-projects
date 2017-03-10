@@ -26,7 +26,7 @@
     justify-content: flex-start;
   }
 
-  textarea, input {
+  textarea, input, select {
     margin: .5rem;
     border: 2px solid #82a9c5;
     font-size: 1rem;
@@ -40,8 +40,12 @@
     padding-top: 1rem;
   }
 
-  input {
+  input, select {
     height: 2rem;
+  }
+
+  select {
+    color: lightgray;
   }
 
   .formInputButton {
