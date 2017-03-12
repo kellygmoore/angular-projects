@@ -16,7 +16,7 @@ export class CollectiblesComponent implements OnInit {
 	selectedCollectible: Collectible;
 	
 	people = [
-	  {id: -1, fullname: '--select person--'},
+	  {id: -1, fullname: 'Will this item to...'},
       {id: 1, fullname: 'Kelly Moore'},
       {id: 2, fullname: 'Eric Moore'},
       {id: 3, fullname: 'Marion Moore'},
@@ -34,7 +34,7 @@ export class CollectiblesComponent implements OnInit {
 	//collectibles: any;
 	//collectibleObj: any;
 	//selectedCollectible: any = '';
-	showDetail: boolean = false;
+	//showDetail: boolean = false;
 
 	constructor(
 		private collectibleService: CollectibleService,
@@ -58,6 +58,7 @@ export class CollectiblesComponent implements OnInit {
 			.then(collectible => {
 				this.collectibles.push(collectible);
 				this.selectedCollectible = null;
+				this.selectedPerson = this.people[0];
 			});
 	}
 
@@ -85,10 +86,11 @@ export class CollectiblesComponent implements OnInit {
 	onSelect(collectible: any): void {
 
 		if(this.selectedCollectible === collectible) {
-			this.showDetail = !this.showDetail;
+			console.log("collectible: ", collectible);
+			//this.showDetail = !this.showDetail;
 		} else {
 			this.selectedCollectible = collectible;
-			this.showDetail = true;
+			//this.showDetail = true;
 		}
   	}
 

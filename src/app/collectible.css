@@ -33,6 +33,8 @@
     padding: .2rem .75rem;
     border-radius: 4px;
     width: 85%;
+    color: #82a9c5;
+    font-weight: 600;
   }
 
   textarea {
@@ -45,15 +47,24 @@
   }
 
   select {
-    color: lightgray;
+    color: #a9a9a9;
+    width: 92.5%;
+    height: 3rem;
   }
 
   .formInputButton {
     width: 92%;
+    height: 4rem;
     border: 2px solid white;
     background-color: #82a9c5;
     margin: .5rem;
+    font-weight: 600;
     font-size: 1rem;
+    color: white;
+  }
+
+  .formInputButton:hover {
+    background-color: rgba(234, 212, 131, 0.98);
   }
 
   .delete:hover {
