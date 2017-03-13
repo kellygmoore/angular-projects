@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Collectible } from './collectible';
 import { People } from './people';
 import { CollectibleService } from './collectible.service';
+import { LifeStoryComponent} from './life-story.component';
+
 
 @Component({
 	moduleId: module.id,

@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `<h1>{{ title }}</h1>
   			<nav>
-  				<!-- <a routerLink="/collectible-detail" routerLinkActive="active">Collectible Detail</a> -->
-      			<!-- <a routerLink="/collectibles" routerLinkActive="active">Collectibles</a> -->
+  				<a routerLink="/lifestory" routerLinkActive="active">My Life Story</a>
+      			<a routerLink="/collectibles" routerLinkActive="active">My Collectibles</a>
   			</nav>
   			<router-outlet></router-outlet>
   `

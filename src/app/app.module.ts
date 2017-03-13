@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { CollectibleDetailComponent } from './collectible-detail.component';
 import { CollectibleService } from './collectible.service';
 import { CollectiblesComponent }  from './collectible.component';
+import { LifeStoryComponent } from './life-story.component';
+
 
 @NgModule({
   imports: [ 
@@ -26,6 +28,7 @@ import { CollectiblesComponent }  from './collectible.component';
   			AppComponent,
   			CollectiblesComponent,
   			CollectibleDetailComponent,
+        LifeStoryComponent
   			],
   bootstrap: [ AppComponent ]
 })
