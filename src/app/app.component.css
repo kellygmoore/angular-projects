@@ -1,0 +1,23 @@
+nav {
+	width: 95%;
+	display: inline-flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	margin-right: 5rem;
+	/*border: 1px solid green;*/
+	background-color: #5a4d57;
+	box-shadow: 3px 3px 2px gray;
+}
+
+nav a {
+	font-size: 1.3rem;
+	font-family: 'Verdana';
+	color: white;
+	padding: .5rem;
+	text-decoration: none;
+	font-weight: 500;
+}
+
+nav a:hover {
+	color: #bcbcbc;
+}
