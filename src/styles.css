@@ -1,11 +1,8 @@
 body {
 	background-color: #82a9c5;
-
-	h1 {
-	  color: #369;
-	  font-family: Arial, Helvetica, sans-serif;
-	  font-size: 2rem;
-	}
+	color: #369;
+	font-family: 'Verdana', Arial, Helvetica, sans-serif;
+	font-size: 1.1rem;
 }
 
 
